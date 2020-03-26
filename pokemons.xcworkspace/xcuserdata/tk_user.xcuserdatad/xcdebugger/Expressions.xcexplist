@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in Observable&lt;A&gt;.decodeJson&lt;A&gt;(responseType:):AlamofirePokemonRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String($1, encoding: .utf8)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LaunchTableView.tableView(_:willDisplay:forRowAt:):LaunchTableView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PokemonViewController.viewDidLoad():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PokemonViewController.loadPokemons():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableView.indexPathsForVisibleRows ?? []">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PokemonViewController.tableView(_:prefetchRowsAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPaths.contains(where: shouldLoadCell(at:))">
+            </PersistentString>
+            <PersistentString
+               value = "isLoading">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
