@@ -29,7 +29,7 @@ extension LaunchListPresenter: FetchLaunchesInteractorOutput {
         let viewModels: [LaunchViewModel] = launches.map({ launch in
             LaunchViewModel(
                     title: launch.missionName,
-                    launchDate: "test", //launch.launchDateLocal,
+                    launchDate: launch.launchDateLocal,
                     flightNumber: String(launch.flightNumber),
                     patchUrl: launch.links?.missionPatchSmall ?? ""
             )

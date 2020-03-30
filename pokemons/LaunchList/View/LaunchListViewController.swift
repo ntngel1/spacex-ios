@@ -23,7 +23,8 @@ class LaunchListViewController: UIViewController, LaunchListView {
         self.view.backgroundColor = UIColor.white
         self.navigationItem.title = "Space X"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-
+        
+        launchTableView.delegate = self
         view.addSubview(launchTableView)
         launchTableView.snp.makeConstraints({
             $0.leading.equalToSuperview()

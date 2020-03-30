@@ -7,7 +7,7 @@ import Foundation
 
 struct LaunchEntity: Decodable {
     let missionName: String
-    let launchDateLocal: Date?
+    let launchDateLocal: Date
     let flightNumber: Int
     let links: LaunchLinksEntity?
 }

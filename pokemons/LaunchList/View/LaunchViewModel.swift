@@ -7,7 +7,7 @@ import Foundation
 
 struct LaunchViewModel {
     let title: String
-    let launchDate: String
+    let launchDate: Date
     let flightNumber: String
     let patchUrl: String
 }

@@ -13,6 +13,7 @@ class FetchLaunchesInteractorImp: FetchLaunchesInteractorInput {
     private var currentLaunches: [LaunchEntity] = []
 
     private var fetchDisposable: Disposable? = nil
+    private var isLoadedAllLaunches = false
     private var currentPage = 0
     private let LIMIT = 10
 
@@ -26,7 +27,7 @@ class FetchLaunchesInteractorImp: FetchLaunchesInteractorInput {
     }
 
     func fetchNextLaunchesPage() {
-        if isLoading {
+        if isLoading || isLoadedAllLaunches {
             return
         }
 
@@ -35,9 +36,13 @@ class FetchLaunchesInteractorImp: FetchLaunchesInteractorInput {
                     self.fetchDisposable = nil
                 })
                 .subscribe(onNext: { launches in
-                    self.currentLaunches.append(contentsOf: launches)
-                    self.currentPage += 1
-                    self.presenter?.set(launches: self.currentLaunches)
+                    if !launches.isEmpty {
+                        self.currentLaunches.append(contentsOf: launches)
+                        self.currentPage += 1
+                        self.presenter?.set(launches: self.currentLaunches)
+                    } else {
+                        self.isLoadedAllLaunches = true
+                    }
                 }, onError: { error in
                     print(error)
                     // TODO Send error to presenter

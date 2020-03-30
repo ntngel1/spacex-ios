@@ -26,8 +26,14 @@ class LaunchTableCell: UITableViewCell {
     func configure(with viewModel: LaunchViewModel) {
         patchImageView.kf.setImage(with: URL(string: viewModel.patchUrl))
         titleLabel.text = viewModel.title
-        launchNumberLabel.text = viewModel.flightNumber
-        launchDateLabel.text = viewModel.launchDate
+        launchNumberLabel.text = "Запуск #\(viewModel.flightNumber)"
+        launchDateLabel.text = formattedLaunchDate(from: viewModel.launchDate)
+    }
+    
+    func formattedLaunchDate(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm dd.MM.yy"
+        return formatter.string(from: date)
     }
 
     private func setupLayout() {

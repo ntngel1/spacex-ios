@@ -86,7 +86,7 @@ extension LaunchTableView: UITableViewDataSource {
 extension LaunchTableView: UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row >= currentViewModels.count {
+        if indexPath.row >= currentViewModels.count - 1 {
             delegate?.onLoadNextLaunchesPage()
         }
     }
