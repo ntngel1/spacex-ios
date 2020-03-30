@@ -16,6 +16,7 @@ class LaunchTableCell: UITableViewCell {
     override init(style: CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -37,9 +38,9 @@ class LaunchTableCell: UITableViewCell {
 
         patchImageView.snp.makeConstraints({
             $0.leading.equalTo(contentView.snp.leading).offset(16)
-            $0.top.equalTo(titleLabel.snp.top)
-            $0.bottom.equalTo(launchDateLabel.snp.bottom)
+            $0.centerY.equalTo(contentView.snp.centerY)
             $0.width.equalTo(60)
+            $0.height.equalTo(60)
         })
         
         titleLabel.snp.makeConstraints({
@@ -63,7 +64,7 @@ class LaunchTableCell: UITableViewCell {
     }
 
     private func setupViews() {
-        patchImageView.contentMode = .scaleAspectFill
+        patchImageView.contentMode = .scaleAspectFit
         patchImageView.clipsToBounds = true
         
         titleLabel.font = titleLabel.font.withSize(16.0)
